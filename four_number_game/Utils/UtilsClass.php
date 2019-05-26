@@ -25,6 +25,9 @@ class UtilsClass {
             return false;
         }
 
+        $number = (int) $number;
+        $number = (string) $number;
+
         $random_number_arr = array_map('intval', str_split($number));
 
         return count($random_number_arr) === count(array_unique($random_number_arr));

@@ -7,7 +7,8 @@ class thinkerClass {
     private $random_number;
 
     public function setRandomNumber($random_number) {
-        $this->random_number = $random_number;
+        $aux = (int) $random_number;
+        $this->random_number = (string) $aux;
     }
 
     public function thinkNumber() {
