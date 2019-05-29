@@ -9,10 +9,10 @@ $response['good'] = 0;
 do {
     do {
         fwrite(STDOUT, "Ingrese un número de cuatro dígitos, donde los dígitos no deben repetirse\n");
-        $number = fgets(STDIN);
-    } while (!\utils\UtilsClass::isValidNumber(trim($number)));
+        $number_in = fgets(STDIN);
+    } while (!utils\UtilsClass::isValidNumber(trim($number_in)));
 
-    $response = $thinker_obj->isNumber($number);
+    $response = $thinker_obj->isNumber(trim($number_in));
     fwrite(STDOUT, $response['text']."\n");
     flush();
 } while ($response['good'] != 4);
