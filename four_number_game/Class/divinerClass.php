@@ -8,14 +8,15 @@ class divinerClass {
     public function guessNumber () {
         $random_number = UtilsClass::generateNumber();
         $response = $this->thinker->isNumber($random_number);
-        if ($response["good"] == 4) {
+        if ($response['good'] == 4) {
             return $random_number;
         }
-        $trace = array("number"=>$random_number, "good"=>$response["good"], "regular"=>$response["regular"]);
+        $trace = array('number'=>$random_number, 'good'=>$response['good'], 'regular'=>$response['regular']);
         $this->setTrace($trace);
 
         return $this->searchCantidates($random_number);
     }
+
 
     public function searchCantidates ($number) {
         while(!UtilsClass::isValidNumber($number)){
@@ -24,8 +25,8 @@ class divinerClass {
         }
 
         if($this->isAceptable(end($this->trace), $number)) {
-            if (end($this->trace)["good"] == 4) {
-                return end($this->trace)["number"];
+            if (end($this->trace)['good'] == 4) {
+                return end($this->trace)['number'];
             }
         }
 
@@ -40,13 +41,13 @@ class divinerClass {
 
     public function isAceptable($trace, $new_number) {
         $response = $this->thinker->isNumber($new_number);
-        if ($trace["good"] < $response["good"]) {
-            $trace = array("number"=>$new_number, "good"=>$response["good"], "regular"=>$response["regular"]);
+        if ($trace['good'] < $response['good']) {
+            $trace = array('number'=>$new_number, 'good'=>$response['good'], 'regular'=>$response['regular']);
             $this->setTrace($trace);
 
             return true;
-        } else if ($trace["regular"] < $response["regular"]){
-            $trace = array("number"=>$new_number, "good"=>$response["good"], "regular"=>$response["regular"]);
+        } else if ($trace['regular'] < $response['regular']){
+            $trace = array('number'=>$new_number, 'good'=>$response['good'], 'regular'=>$response['regular']);
             $this->setTrace($trace);
             return true;
         } else {

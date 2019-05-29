@@ -32,7 +32,7 @@ class thinkerClass {
             }
         }
 
-        $text = "";
+        $text = '';
         switch ($count_g) {
             case 0:
                 break;
@@ -48,6 +48,10 @@ class thinkerClass {
             $text .= $count_r.' regular';
         }
 
-        return array("good"=>$count_g, 'regular'=>$count_r ,"text"=>$text);
+        return array('good'=>$count_g, 'regular'=>$count_r ,'text'=>$text);
+    }
+
+    public function getRandomNumber () {
+        return (int) $this->random_number;
     }
 }
