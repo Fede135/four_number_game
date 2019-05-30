@@ -16,3 +16,11 @@ Para jugar como adivinador, donde la computadora piensa un número y usted adivi
 Para jugar como pensador, donde usted piensa un número y la computadora lo adivina, debe ejecutar el siguiente comando en consola:
 
 - php play_like_thinker.php
+
+#Como ejecutar test unitarios
+
+Ejecutando los siguientes comandos en la raíz del proyecto, se podrán correr los test unitarios
+
+- ./vendor/bin/phpunit --bootstrap vendor/autoload.php Test/thinkerTest.php
+
+- ./vendor/bin/phpunit --bootstrap vendor/autoload.php Test/divinerTest.php

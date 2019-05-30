@@ -1,6 +1,7 @@
 <?php namespace utils;
+
 class UtilsClass {
-    const min_value = 1234;
+    const min_value = 1023;
     const max_value = 9876;
 
     public static function generateNumber($values = null) {
