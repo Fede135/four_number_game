@@ -1,11 +1,10 @@
-#Reglas
-
-Aclaraciones:
+#Aclaraciones:
 
 Se tuvo en cuenta para la generación de números aleatorios que el primer dígito debe ser distinto de 0. La justificación a esto es que el número "0123" en realidad es el número 123.
 
 Ingresar valores como "01234", no tendrá en cuenta los 0 a la izquierda, sino que se considera como número 1234.
 
+La versión de php usada para programar es la versión 7.2.
 
 #Como jugar
 
